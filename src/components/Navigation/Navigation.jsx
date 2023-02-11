@@ -1,16 +1,21 @@
-import { NavigationLink } from "./Navigation.styled";
+import { NavigationLink } from './Navigation.styled';
 
 const Navigation = () => {
+  return (
     <nav>
-        <ul>
-            <li>
-                <NavigationLink>Home</NavigationLink>
-            </li>
-            <li>
-                <NavigationLink>Event</NavigationLink>
-            </li>
-        </ul>
-    </nav>;
+      <ul>
+        <li>
+          <NavigationLink to={'/'}>Home</NavigationLink>
+        </li>
+        <li>
+          <NavigationLink to={'events'}>Event</NavigationLink>
+        </li>
+        <li>
+          <NavigationLink to={'search'}>Search</NavigationLink>
+        </li>
+      </ul>
+    </nav>
+  );
 };
 
 export default Navigation;

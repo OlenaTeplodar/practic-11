@@ -16,7 +16,6 @@ export async function fetchEvents() {
   return response.data._embedded.events;
 }
 
-
 export async function fetchEventById(id) {
   const response = await axios(`events/${id}`, {
     params: {
@@ -25,4 +24,18 @@ export async function fetchEventById(id) {
   });
 
   return response.data;
+}
+
+export async function fetchEventsByName(keyword) {
+  const response = await axios('events', {
+    params: {
+      apikey: KEY,
+
+      size: 20,
+
+      keyword,
+    },
+  });
+
+  return response.data._embedded.events;
 }

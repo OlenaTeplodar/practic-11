@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchEvents } from '../services/moviesApi';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const EventPage = () => {
     const [events, setEvents] = useState([]);
@@ -12,7 +12,7 @@ const EventPage = () => {
                 console.log(data);
                 setEvents(data);
             } catch (error) {
-                console.log(error);
+                console.log(error.message);
             }
 
         }
@@ -26,10 +26,11 @@ const EventPage = () => {
     ); });
 
     return (
-        <ul>
-            {elements}
-        </ul>
-    )
+      <>
+        <ul>{elements}</ul>
+        <Outlet />
+      </>
+    );
 }
 
 export default EventPage;
